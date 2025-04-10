@@ -29,7 +29,7 @@ export class DefaultOfferService implements OfferService {
 
     return this.offerModel
       .findById(offerId)
-      .populate(['userId', 'city'])
+      .populate(['hostId', 'city'])
       .exec();
   }
 

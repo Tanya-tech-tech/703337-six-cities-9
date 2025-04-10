@@ -1,0 +1,4 @@
+# Получить объявление по идентификатору
+GET http://localhost:5000/offers/67cdac083c2ccdd9b1f5375e HTTP/1.1
+
+###
