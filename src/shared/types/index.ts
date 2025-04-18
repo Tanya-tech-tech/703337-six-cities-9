@@ -6,3 +6,5 @@ export { RentType } from './rent-type.enum.js';
 export { City } from './city-type.js';
 export { SortType } from './sort-type.enum.js';
 export { CommentData } from './comment-type.js';
+export { GoodsType } from './goods-type.enum.js';
+export { DocumentExists } from './document-exists.interface.js';

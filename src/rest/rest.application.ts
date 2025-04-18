@@ -19,6 +19,8 @@ export class RestApplication {
     @inject(Component.CityController) private readonly cityController: Controller,
     @inject(Component.ExceptionFilter) private readonly appExceptionFilter: ExceptionFilter,
     @inject(Component.UserController) private readonly userController: Controller,
+    @inject(Component.OfferController) private readonly offerController: Controller,
+    @inject(Component.CommentController) private readonly commentController: Controller,
   ) {
     this.server = express();
   }
@@ -41,9 +43,11 @@ export class RestApplication {
   }
 
   private async _initControllers() {
-    //this.server.use('/offers/:offerId/comments', this.commentController.router);
+
     this.server.use('/cities', this.cityController.router);
     this.server.use('/users', this.userController.router);
+    this.server.use('/offers', this.offerController.router);
+    this.server.use('/comments', this.commentController.router);
   }
 
   private async _initExceptionFilters() {
@@ -52,6 +56,10 @@ export class RestApplication {
 
   private async _initMiddleware() {
     this.server.use(express.json());
+    this.server.use(
+      '/upload',
+      express.static(this.config.get('UPLOAD_DIRECTORY'))
+    );//http://localhost:5000/upload/logo-background-3.jpg
   }
 
   public async init() {

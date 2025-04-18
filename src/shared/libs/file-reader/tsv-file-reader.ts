@@ -1,6 +1,6 @@
 
 import { FileReader } from './file-reader.interface.js';
-import { RentType, RentCardType, UserData, City } from './index.js';
+import { RentType, RentCardType, UserData, City, GoodsType } from './index.js';
 import EventEmitter from 'node:events';
 import { createReadStream } from 'node:fs';
 
@@ -59,7 +59,7 @@ export class TSVFileReader extends EventEmitter implements FileReader {
       bedrooms: Number(bedrooms),
       maxAdults: Number(maxAdults),
       price: this.parsePrice(price),
-      goods: this.parseImages(goods),
+      goods: this.parseImages(goods) as GoodsType[],
       host: this.parseUser(hostName, hostEmail, hostAvatarUrl, hostisPro),
       password: String(password),
       comments: Number(comments),

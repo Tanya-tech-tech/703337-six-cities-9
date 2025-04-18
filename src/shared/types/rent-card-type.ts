@@ -1,6 +1,7 @@
 import { UserData } from './user-data.js';
 import { City } from './city-type.js';
 import { RentType } from './rent-type.enum.js';
+import { GoodsType } from './goods-type.enum.js';
 
 export type RentCardType = {
   id: string;
@@ -17,7 +18,7 @@ export type RentCardType = {
   bedrooms: number;
   maxAdults: number;
   price: number;
-  goods: string[];
+  goods: GoodsType[];
   host: UserData;
   password: string;
   comments: number;

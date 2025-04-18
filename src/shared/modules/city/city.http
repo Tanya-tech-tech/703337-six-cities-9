@@ -10,9 +10,14 @@ POST http://localhost:5000/cities HTTP/1.1
 Content-Type: application/json
 
 {
-  "name": "Краснодар",
-  "latitude": 27,
-  "longitude": 45
+  "name": 234,
+  "latitude": 50.938361,
+  "longitude": 6.959974
 }
+
+###
+## Список объявлений определённой категории
+
+GET http://localhost:5000/cities/67cdac083c2ccdd9b1f53747/offers?limit=10 HTTP/1.1
 
 ###
